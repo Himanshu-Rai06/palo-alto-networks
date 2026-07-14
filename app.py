@@ -196,7 +196,7 @@ def themed_chart(fig, height=None):
 
 
 def render_chart(fig, **kwargs):
-    st.plotly_chart(themed_chart(fig), width="stretch", **kwargs)
+    st.plotly_chart(themed_chart(fig) , **kwargs)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -972,7 +972,7 @@ with tab4:
 
     seg_df = pd.DataFrame(segments)
     if len(seg_df) > 0:
-        st.dataframe(seg_df, width="stretch", hide_index=True,
+        st.dataframe(seg_df , hide_index=True,
                      column_config={
                          "Priority": st.column_config.TextColumn("Priority", width="small"),
                          "Segment": st.column_config.TextColumn("Segment", width="large"),
@@ -1068,7 +1068,7 @@ with tab4:
                      "EngagementIndex", "EngagementTier", "BurnoutRisk", "BurnoutScore",
                      "WorkloadStress", "StressLevel", "Attrition"]
         cols_show = [c for c in cols_show if c in df.columns]
-        st.dataframe(df[cols_show].sort_values("EngagementIndex").reset_index(drop=True), width="stretch")
+        st.dataframe(df[cols_show].sort_values("EngagementIndex").reset_index(drop=True) )
         st.caption(f"Showing {n:,} employees after current filters.")
 
 
